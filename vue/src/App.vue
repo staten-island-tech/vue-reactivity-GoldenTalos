@@ -11,7 +11,7 @@
             :key="index"
           >
             <button @click="updateCharacter(index)">
-              {{ characterList.food }}
+              {{ characterList.character }}
             </button>
             <img class="image" :src="characterList.characterImage" />
             <p>${{ characterList.price }}</p>
@@ -25,7 +25,7 @@
             :key="index"
           >
             <button @click="updateWeapon(index)">
-              {{ weaponsList.drink }}
+              {{ weaponsList.weapon }}
             </button>
             <img class="image" :src="weaponsList.weaponImage" />
             <p>${{ weaponsList.price }}</p>
@@ -60,6 +60,36 @@
 </template>
 
 <script>
+import hutao from "./assets/hutao.jpg";
+import kazuha from "./assets/Kazuha.jpg";
+import ganyu from "./assets/ganyu.jpg";
+import ei from "./assets/ei.jpg";
+import ayaka from "./assets/Ayaka.jpg";
+import eula from "./assets/eula.jpg";
+import venti from "./assets/Venti.jpg";
+import yelan from "./assets/Yelan.jpg";
+import zhongli from "./assets/Zhongli.jpg";
+import bennett from "./assets/Bennett.jpg";
+import xiao from "./assets/xiao.jpg";
+import fischl from "./assets/Fischl.jpg";
+import xiang from "./assets/Xiangling.jpg";
+import xing from "./assets/xingqiu.jpg";
+import rose from "./assets/Sucrose.jpg";
+import shinobu from "./assets/Shinobu.jpg";
+import cat from "./assets/Diona.jpg";
+import heizou from "./assets/Heizou.jpg";
+import mist from "./assets/Mistsplitter.jpg";
+import cutter from "./assets/Primordial Jade Cutter.jpg";
+import freedom from "./assets/Freedom.png";
+import aqua from "./assets/Aqua.jpg";
+import pulse from "./assets/Thundering.jpg";
+import polar from "./assets/Polar.jpg";
+import homa from "./assets/homa.jpg";
+import lightning from "./assets/Lightning.png";
+import jadespear from "./assets/Primoridal Jade Spear.jpg";
+import skyward from "./assets/Skyward.jpg";
+import kagura from "./assets/Kagura.jpg";
+
 export default {
   name: "App",
   components: {},
@@ -71,149 +101,149 @@ export default {
       characterList: [
         {
           character: "HuTao",
-          characterImage: "./assets/hutao.jpg",
+          characterImage: hutao,
           price: 14400,
         },
         {
           character: "Kazuha",
-          characterImage: "./assets/Kazuha.jpg",
+          characterImage: kazuha,
           price: 14400,
         },
         {
           character: "Ganyu",
-          characterImage: "./assets/ganyu.jpg",
+          characterImage: ganyu,
           price: 14400,
         },
         {
           character: "Raiden Shogun",
-          characterImage: "./assets/ei.jpg",
+          characterImage: ei,
           price: 14400,
         },
         {
           character: "Ayaka",
-          characterImage: "./assets/Ayaka.jpg",
+          characterImage: ayaka,
           price: 14400,
         },
         {
           character: "Eula",
-          characterImage: "./assets/eula.jpg",
+          characterImage: eula,
           price: 14400,
         },
         {
           character: "Venti",
-          characterImage: "./assets/Venti.jpg",
+          characterImage: venti,
           price: 14400,
         },
         {
           character: "Xiao",
-          characterImage: "./assets/Xiao.jpg",
+          characterImage: xiao,
           price: 14400,
         },
         {
           character: "Yelan",
-          characterImage: "./assets/Yelan.jpg",
+          characterImage: yelan,
           price: 14400,
         },
         {
           character: "Zhongli",
-          characterImage: "./assets/Zhongli.jpg",
+          characterImage: zhongli,
           price: 14400,
         },
         {
           character: "Bennett",
-          characterImage: "./assets/Bennett.jpg",
+          characterImage: bennett,
           price: 6400,
         },
         {
           character: "Fischl",
-          characterImage: "./assets/Fischl.jpg",
+          characterImage: fischl,
           price: 6400,
         },
         {
           character: "Xiangling",
-          characterImage: "./assets/Xiangling.jpg",
+          characterImage: xiang,
           price: 6400,
         },
         {
           character: "Xingqiu",
-          characterImage: "./assets/xingqiu.jpg",
+          characterImage: xing,
           price: 6400,
         },
         {
           character: "Sucrose",
-          characterImage: "./assets/Sucrose.jpg",
+          characterImage: rose,
           price: 6400,
         },
         {
           character: "Shinobu",
-          characterImage: "./assets/Shinobu.jpg",
+          characterImage: shinobu,
           price: 6400,
         },
         {
           character: "Diona",
-          characterImage: "./assets/Diona.jpg",
+          characterImage: cat,
           price: 6400,
         },
         {
           character: "Heizou",
-          characterImage: "./assets/Heizou.jpg",
+          characterImage: heizou,
           price: 6400,
         },
       ],
       weaponsList: [
         {
           weapon: "Mistsplitter Reforged",
-          weaponImage: "./assets/Mistsplitter.jpg",
+          weaponImage: mist,
           price: 25600,
         },
         {
           weapon: "Primordial Jade Cutter",
-          weaponImage: "./assets/Primordial Jade Cutter.jpg",
+          weaponImage: cutter,
           price: 25600,
         },
         {
           weapon: "Freedom-Sworn",
-          weaponImage: "./assets/Freedom.png",
+          weaponImage: freedom,
           price: 25600,
         },
         {
           weapon: "Aqua Simulacra",
-          weaponImage: "./assets/Aqua.jpg",
+          weaponImage: aqua,
           price: 25600,
         },
         {
           weapon: "Thundering Pulse",
-          weaponImage: "./assets/Thundering.jpg",
+          weaponImage: pulse,
           price: 25600,
         },
         {
           weapon: "Polar Star",
-          weaponImage: "./assets/Polar.jpg",
+          weaponImage: polar,
           price: 25600,
         },
         {
           weapon: "Staff Of Homa",
-          weaponImage: "./assets/homa.jpg",
+          weaponImage: homa,
           price: 25600,
         },
         {
           weapon: "Englufing Lightning",
-          weaponImage: "./assets/Lightning.png",
+          weaponImage: lightning,
           price: 25600,
         },
         {
           weapon: "Primoridal Jade Winged-Spear",
-          weaponImage: "./assets/Primoridal Jade Spear.jpg",
+          weaponImage: jadespear,
           price: 25600,
         },
         {
           weapon: "Skyward Atlas",
-          weaponImage: "./assets/Skyward.jpg",
+          weaponImage: skyward,
           price: 25600,
         },
         {
           weapon: "Kagura's Verity",
-          weaponImage: "./assets/Kagura.jpg",
+          weaponImage: kagura,
           price: 25600,
         },
       ],
