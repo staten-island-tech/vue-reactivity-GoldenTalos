@@ -17,7 +17,7 @@
             <p>${{ characterList.price }}</p>
           </div>
         </div>
-
+        <h1>Weapons:</h1>
         <div id="weapons">
           <div
             class="wish"
@@ -224,13 +224,14 @@ export default {
   methods: {
     updateCharacter(index) {
       this.wishes.push(this.characterList[index].character);
-      this.totalPrimogems.push(this.characterList[index].price);
-      this.subtotal = this.subtotal + this.characterList[index].price;
+      this.primogems.push(this.characterList[index].price);
+      this.totalPrimogems =
+        this.totalPrimogems + this.characterList[index].price;
     },
     updateWeapon(index) {
       this.wishes.push(this.weaponsList[index].weapon);
-      this.totalPrimogems.push(this.weaponsList[index].price);
-      this.subtotal = this.subtotal + this.weaponsList[index].price;
+      this.primogems.push(this.weaponsList[index].price);
+      this.totalPrimogems = this.totalPrimogems + this.weaponsList[index].price;
     },
     removeAllItems() {
       this.wishes = [];
