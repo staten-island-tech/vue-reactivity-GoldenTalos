@@ -5,31 +5,25 @@
 
       <div id="team">
         <div id="characters">
-          <div
+          <card
             class="wish"
             v-for="(characterList, index) in characterList"
             :key="index"
-          >
-            <button @click="updateCharacter(index)">
-              {{ characterList.character }}
-            </button>
-            <img class="image" :src="characterList.characterImage" />
-            <p>${{ characterList.price }}</p>
-          </div>
+            :image="characterList.characterImage"
+            :name="characterList.character"
+            :price="characterList.price"
+          ></card>
         </div>
         <h1>Weapons:</h1>
         <div id="weapons">
-          <div
+          <card2
             class="wish"
             v-for="(weaponsList, index) in weaponsList"
             :key="index"
-          >
-            <button @click="updateWeapon(index)">
-              {{ weaponsList.weapon }}
-            </button>
-            <img class="image" :src="weaponsList.weaponImage" />
-            <p>${{ weaponsList.price }}</p>
-          </div>
+            :image2="weaponsList.weaponImage"
+            :name2="weaponsList.weapon"
+            :price2="weaponsList.price"
+          ></card2>
         </div>
       </div>
     </section>
@@ -49,17 +43,14 @@
         </ul>
       </div>
       <h3>Total Primogems: ${{ totalPrimogems }}</h3>
-      <button class="delete-btn" @click="removeLastItem()">
-        Delete previous order.
-      </button>
-      <button class="delete-btn" @click="removeAllItems()">
-        Delete all orders.
-      </button>
     </section>
   </div>
 </template>
 
 <script>
+import Card2 from "./components/Card.vue";
+import Card from "./components/Card2.vue";
+
 import hutao from "./assets/hutao.jpg";
 import kazuha from "./assets/Kazuha.jpg";
 import ganyu from "./assets/ganyu.jpg";
@@ -92,7 +83,10 @@ import kagura from "./assets/Kagura.jpg";
 
 export default {
   name: "App",
-  components: {},
+  components: {
+    Card2,
+    Card,
+  },
   data() {
     return {
       totalPrimogems: 0,
@@ -268,14 +262,32 @@ export default {
       this.primogems = [];
       this.totalPrimogems = 0;
     },
-    removeLastCItem() {
-      this.wishes.splice(this.wishes.indexOf(characterList), 1);
-    },
-    removeLastWItem() {
-      this.wishes.splice(this.wishes.indexOf(weaponList), 1);
+    removeLastItem() {
+      if (this.wishes.length !== 0) {
+        this.totalPrimogems =
+          this.totalPrimogems - this.primogems[this.primogems.length - 1];
+        this.wishes.pop();
+        this.primogems.pop();
+      }
     },
   },
 };
 </script>
 
-<style scoped></style>
+<style>
+#app {
+  display: flex;
+  flex-direction: row;
+}
+.image {
+  height: 8rem;
+  width: 6rem;
+  object-fit: cover;
+}
+#weapons,
+#characters {
+  display: flex;
+  flex-direction: row;
+  margin: 2rem;
+}
+</style>
