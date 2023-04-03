@@ -70,7 +70,7 @@ import venti from "./assets/Venti.jpg";
 import yelan from "./assets/Yelan.jpg";
 import zhongli from "./assets/Zhongli.jpg";
 import bennett from "./assets/Bennett.jpg";
-import xiao from "./assets/xiao.jpg";
+import xiao from "./assets/Xiao.jpg";
 import fischl from "./assets/Fischl.jpg";
 import xiang from "./assets/Xiangling.jpg";
 import xing from "./assets/xingqiu.jpg";
