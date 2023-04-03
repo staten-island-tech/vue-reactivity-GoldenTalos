@@ -26,7 +26,7 @@ export default {
 <style>
 .card {
   width: 12.7vw;
-  height: 30rem;
+  height: 34rem;
   display: flex;
   flex-direction: column;
 }
@@ -35,5 +35,8 @@ img {
   width: 6rem;
   object-fit: cover;
   display: block;
+}
+.price {
+  margin-top: 0px;
 }
 </style>

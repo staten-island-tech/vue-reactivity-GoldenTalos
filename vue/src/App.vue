@@ -39,17 +39,18 @@
           </li>
         </ul>
         <ul class="list">
+          <h2>Prices:</h2>
           <li class="info" v-for="price in primogems" :key="price">
             ${{ price }}
           </li>
         </ul>
       </div>
-      <h3>Total Primogems: ${{ totalPrimogems }}</h3>
+      <h3>Total Primogems: {{ totalPrimogems }}</h3>
       <button class="delete-btn" @click="removeLastItem()">
-        Delete previous order.
+        Delete previous wish.
       </button>
       <button class="delete-btn" @click="removeAllItems()">
-        Delete all orders.
+        Delete all wishes.
       </button>
     </section>
   </div>
@@ -288,6 +289,9 @@ export default {
   display: flex;
   flex-direction: row;
 }
+#inputs {
+  margin-left: 2px;
+}
 .image {
   height: 29rem;
   width: 6rem;
@@ -297,7 +301,11 @@ export default {
 #characters {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
   margin: 2rem;
+  justify-content: space-around;
+  align-content: space-around;
   width: 57vw;
 }
 .wish {
@@ -321,5 +329,11 @@ section {
   margin: 1rem 5rem;
   height: auto;
   width: 39vw;
+  margin-left: -96px;
+  position: sticky;
+  top: 28;
+}
+.delete-btn {
+  margin-bottom: 10px;
 }
 </style>
