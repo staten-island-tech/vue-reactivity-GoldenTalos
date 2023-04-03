@@ -1,9 +1,9 @@
 <template>
   <div class="card">
-    <img v-bind:src="images" />
+    <img v-bind:src="images" :alt="wname" />
     <h1 class="card-title">{{ wname }}</h1>
     <div class="card-info">
-      <h3 class="price">${{ wprice }}</h3>
+      <h2 class="price">${{ wprice }}</h2>
       <button @click="$emit('updateWeapon')">Add</button>
     </div>
   </div>
