@@ -331,7 +331,8 @@ section {
   width: 39vw;
   margin-left: -96px;
   position: sticky;
-  top: 28;
+  top: 0;
+  list-style: none;
 }
 .delete-btn {
   margin-bottom: 10px;
