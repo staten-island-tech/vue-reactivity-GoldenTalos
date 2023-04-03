@@ -8,6 +8,7 @@
           <card
             class="wish"
             v-for="(characterList, index) in characterList"
+            @updateCharacter="updateCharacter(index)"
             :key="index"
             :image="characterList.characterImage"
             :name="characterList.character"
@@ -19,10 +20,11 @@
           <card2
             class="wish"
             v-for="(weaponsList, index) in weaponsList"
+            @updateWeapon="updateWeapon(index)"
             :key="index"
-            :image2="weaponsList.weaponImage"
-            :name2="weaponsList.weapon"
-            :price2="weaponsList.price"
+            :images="weaponsList.weaponImage"
+            :wname="weaponsList.weapon"
+            :wprice="weaponsList.price"
           ></card2>
         </div>
       </div>
@@ -43,13 +45,19 @@
         </ul>
       </div>
       <h3>Total Primogems: ${{ totalPrimogems }}</h3>
+      <button class="delete-btn" @click="removeLastItem()">
+        Delete previous order.
+      </button>
+      <button class="delete-btn" @click="removeAllItems()">
+        Delete all orders.
+      </button>
     </section>
   </div>
 </template>
 
 <script>
-import Card2 from "./components/Card.vue";
-import Card from "./components/Card2.vue";
+import Card from "./components/Card.vue";
+import Card2 from "./components/Card2.vue";
 
 import hutao from "./assets/hutao.jpg";
 import kazuha from "./assets/Kazuha.jpg";
@@ -276,11 +284,12 @@ export default {
 
 <style>
 #app {
+  text-align: center;
   display: flex;
   flex-direction: row;
 }
 .image {
-  height: 8rem;
+  height: 29rem;
   width: 6rem;
   object-fit: cover;
 }
@@ -289,5 +298,28 @@ export default {
   display: flex;
   flex-direction: row;
   margin: 2rem;
+  width: 57vw;
+}
+.wish {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  width: 13.7vw;
+}
+#characters,
+#weapons {
+  display: flex;
+  flex-direction: row;
+  margin: 2rem;
+}
+section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#list {
+  margin: 1rem 5rem;
+  height: auto;
+  width: 39vw;
 }
 </style>

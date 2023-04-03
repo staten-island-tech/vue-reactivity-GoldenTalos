@@ -4,9 +4,7 @@
     <h1 class="card-title">{{ name }}</h1>
     <div class="card-info">
       <h3 class="price">${{ price }}</h3>
-      <button @click="updateCharacter(index)">
-        {{ name }}
-      </button>
+      <button @click="$emit('updateCharacter')">Add</button>
     </div>
   </div>
 </template>
@@ -15,12 +13,27 @@
 export default {
   name: "Card",
   props: {
-    title: String,
+    name: String,
     image: String,
-    price: String,
+    price: Number,
   },
   data() {
     return {};
   },
 };
 </script>
+
+<style>
+.card {
+  width: 12.7vw;
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+}
+img {
+  height: 29rem;
+  width: 6rem;
+  object-fit: cover;
+  display: block;
+}
+</style>
